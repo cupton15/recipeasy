@@ -5,7 +5,7 @@ import './SearchBar.css';
 const SearchBar = ({placeholder}) => {
     return(
         <div>
-            <input type="text" placeholder="{placeholder}"/> 
+            <input type="text" placeholder={placeholder}/> 
         </div>
     );
 }

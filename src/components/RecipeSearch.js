@@ -5,7 +5,7 @@ class RecipeSearch extends Component {
     render() {
         return(
             <div>
-                <SearchBar placeholder="test"></SearchBar>
+                <SearchBar></SearchBar>
             </div>
         )
     }
