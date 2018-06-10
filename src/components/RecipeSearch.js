@@ -9,8 +9,7 @@ class RecipeSearch extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(){
-        console.log('clicked');
+    handleSubmit() {
         this.setState({ loading: true });
     }
 
