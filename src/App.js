@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
@@ -111,7 +112,9 @@ Phasellus pulvinar commodo nulla vitae mollis. Curabitur pretium sodales ultrice
 Etiam in lorem a odio vestibulum cursus in interdum mauris. In mollis sem dolor, nec malesuada nisl iaculis placerat. Quisque egestas ante id faucibus fringilla. Suspendisse sit amet massa justo. Praesent tempor convallis nunc, at laoreet augue mollis vel. Donec bibendum leo et justo porttitor, quis dapibus justo bibendum. Suspendisse nec nibh nisi. Vestibulum quam magna, tristique sit amet dapibus in, pretium vitae turpis. Aenean tempus iaculis ante sit amet gravida. Donec eleifend tincidunt massa eget rutrum. Integer mauris nisl, suscipit at egestas non, ullamcorper quis eros.
           </p>
         </div>
-        <footer className="App-footer">This is the footer</footer>
+        <footer className="App-footer">
+          <Footer></Footer>
+        </footer>
       </div>
     );
   }

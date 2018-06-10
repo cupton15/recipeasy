@@ -18,7 +18,9 @@
 
 .App-footer {
   grid-area: footer;
-  background: blue;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 50px;
 }
 
 .App-main {
