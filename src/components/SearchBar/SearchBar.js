@@ -4,9 +4,15 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import './SearchBar.css';
 
 const SearchBar = ({placeholder, onSubmit, loading}) => {
+    let inputValue;
+
+    const handleChange = (event) => {
+        inputValue = event.target.value;
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        onSubmit();
+        onSubmit(inputValue);
     }
 
     const icon = loading ? (
@@ -17,7 +23,7 @@ const SearchBar = ({placeholder, onSubmit, loading}) => {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder={placeholder}/> 
+            <input type="text" placeholder={placeholder} onChange={handleChange}/> 
             <button className="search-button" type="submit">
                 {icon}
             </button>

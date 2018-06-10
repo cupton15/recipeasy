@@ -9,8 +9,17 @@ class RecipeSearch extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit() {
+    handleSubmit(searchString) {
         this.setState({ loading: true });
+        
+        
+        fetch(`https://api.edamam.com/search?q=${searchString}&app_id=ee2c97b8&app_key=44632bb36639b1e9d9c9a071b00fca22`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                console.log(response);
+            });
     }
 
     render() {
