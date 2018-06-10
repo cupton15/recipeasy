@@ -1,5 +1,23 @@
 input[type="text"] {
-    line-height: 2em;
+    line-height: 2.5em;
     font-size: 16px;
     width: 400px;
+    padding: 0 5px; 
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+}
+
+form {
+    position: relative;
+}
+
+.search-button {
+    height: 100%;
+    position: absolute;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 0 6px 6px 0;
 }

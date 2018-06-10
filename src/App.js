@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Footer from './components/Footer';
 import RecipeSearch from './components/RecipeSearch';
+import fontawesome from '@fortawesome/fontawesome';
+import { faSearch, faCircleNotch } from '@fortawesome/fontawesome-free-solid';
 import './App.css';
+
+fontawesome.library.add(faSearch, faCircleNotch);
 
 class App extends Component {
   render() {

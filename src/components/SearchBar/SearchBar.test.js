@@ -2,7 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import { shallow }  from 'enzyme';
 
-it('SearchBar shows provided placeholder', () => {
+it('shows provided placeholder', () => {
     const wrapper = shallow(
         <SearchBar placeholder="test"></SearchBar>
     );
@@ -10,7 +10,7 @@ it('SearchBar shows provided placeholder', () => {
     expect(searchBar.prop('placeholder')).toEqual('test');
 })
 
-it('SearchBar should not show a placeholder if none provided', () => {
+it('should not show a placeholder if none provided', () => {
     const wrapper = shallow(
         <SearchBar></SearchBar>
     );
