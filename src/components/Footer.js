@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const Footer = () => {
-    return (
-        <div>
-            <div id="edamam-badge" data-color="white"></div>
-        </div>
-    )
-}
+const Footer = () => (
+  <div>
+    <div id="edamam-badge" data-color="white" />
+  </div>
+);
 
 export default Footer;

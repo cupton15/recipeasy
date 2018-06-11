@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Footer from './components/Footer';
-import RecipeSearch from './components/RecipeSearch';
 import fontawesome from '@fortawesome/fontawesome';
 import { faSearch, faCircleNotch } from '@fortawesome/fontawesome-free-solid';
+import Footer from './components/Footer';
+import RecipeSearch from './components/RecipeSearch/RecipeSearch';
 import './App.css';
 
 fontawesome.library.add(faSearch, faCircleNotch);
@@ -15,10 +15,10 @@ class App extends Component {
           This is the header
         </header>
         <div className="App-main">
-         <RecipeSearch></RecipeSearch>
+          <RecipeSearch />
         </div>
         <footer className="App-footer">
-          <Footer></Footer>
+          <Footer />
         </footer>
       </div>
     );
