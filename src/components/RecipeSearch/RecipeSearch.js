@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import RecipeTable from '../RecipeTable/RecipeTable';
+import './RecipeSearch.css';
 
 class RecipeSearch extends Component {
   constructor() {

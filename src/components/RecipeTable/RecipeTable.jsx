@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RecipeTile from '../RecipeTile/RecipeTile';
 import './RecipeTable.css';
 
 const RecipeTable = ({ recipes }) => {
-  const tableItems = recipes.map((recipe, index) => <div key={ index }>{recipe.label}</div>);
+  const tableItems = recipes.map((recipe, index) =>
+    <RecipeTile key={index} recipe={recipe} />);
 
   return (
     <div className="recipe-table">
