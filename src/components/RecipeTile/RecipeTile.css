@@ -2,4 +2,22 @@
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center;
+    background-color: grey;
+    background-size: cover;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.text-container {
+    display: flex;
+}
+
+.tile-text {
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.2);
 }

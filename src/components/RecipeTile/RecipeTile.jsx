@@ -8,7 +8,10 @@ const RecipeTile = ({ recipe }) => {
   };
 
   return (
-    <div className="recipe-tile" style={style}>{ recipe.label }</div>
+    <div className="recipe-tile grow shadow" style={style}>
+      <div className="text-container"><span className="tile-text">{ recipe.label }</span></div>
+      <div className="text-container"><span className="tile-text">{ recipe.source }</span></div>
+    </div>
   );
 };
 
@@ -16,6 +19,7 @@ RecipeTile.propTypes = {
   recipe: PropTypes.shape({
     label: PropTypes.string,
     image: PropTypes.string,
+    source: PropTypes.string,
   }).isRequired,
 };
 
