@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from './SearchBar';
 import { shallow } from 'enzyme';
+import SearchBar from './SearchBar';
 
 const onSubmit = () => {};
 const onChange = () => {};

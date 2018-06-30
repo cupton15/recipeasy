@@ -31,6 +31,11 @@ const SearchBar = ({
   );
 };
 
+SearchBar.defaultProps = {
+  placeholder: '',
+  loading: false,
+};
+
 SearchBar.propTypes = {
   placeholder: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
