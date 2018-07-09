@@ -7,17 +7,31 @@ const RecipeDetails = (props) => {
     backgroundImage: `url(${props.recipe.image})`,
   };
 
+  const ingredients = props.recipe.ingredients.map((ingredient, index) => {
+    return <li key={index}>{ingredient.text}</li>;
+  });
+
   return (
     <article className="details-body">
       <header className="details-header full-image-background" style={style}>
-        <h1>{ props.recipe.label }</h1>
-      </header>
-      <div className="details-content">
-        <div className="grid-layout">
-          <div className="grid-item grow shadow">Ingredients</div>
-          <div className="grid-item grow shadow">Method</div>
+        <div className="overlay">
+          <div className="main-details">
+            <h1>{ props.recipe.label }</h1>
+            <a href={props.recipe.url} target="_blank" rel="noopener noreferrer">
+              { props.recipe.source }
+              <span className="visuallyhidden">, opens in a new window</span>
+            </a>
+            <div>Number of servings: {props.recipe.yield}</div>
+            <div>Calories: {props.recipe.calories}</div>
+          </div>
+          <div className="details-content">
+            <div>Ingredients</div>
+            <ul>
+              {ingredients}
+            </ul>
+          </div>
         </div>
-      </div>
+      </header>
     </article>
   );
 };
@@ -25,8 +39,12 @@ const RecipeDetails = (props) => {
 RecipeDetails.propTypes = {
   recipe: PropTypes.shape({
     label: PropTypes.string,
+    url: PropTypes.string,
     image: PropTypes.string,
     source: PropTypes.string,
+    yield: PropTypes.string,
+    calories: PropTypes.string,
+    ingredients: PropTypes.array,
   }).isRequired,
 };
 

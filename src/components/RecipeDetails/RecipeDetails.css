@@ -1,35 +1,36 @@
 .details-body {
     width: 60%;
     position: relative;
-    padding-top: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
 }
 
 .details-header {
-    position: absolute;
-    height: 500px;
-    top: -50px;
     width: 100%;
     border-radius: 6px;
-    padding: 2rem;
+    padding-top: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.main-details {
+    margin-bottom: 100px;
 }
 
 .details-content {
     position: relative;
     z-index: 1;
-}
-
-.grid-layout {
-    display: grid;
-    grid-template-columns: minmax(150px, auto) minmax(150px, auto) auto;
-    grid-auto-rows: minmax(150px, auto);
-    grid-gap: 2rem .5rem;
-}
-
-.grid-item {
-    height: 125px;
-    width: 125px;
-    background-color: red;
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 0.5rem;
 }

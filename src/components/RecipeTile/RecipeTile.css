@@ -20,7 +20,7 @@
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.4);
     text-align: left;
-    white-space: nowrap;
+    font-size: 16px;
 }
 
 .full-screen {
@@ -29,7 +29,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
 }

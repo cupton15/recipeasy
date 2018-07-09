@@ -4,8 +4,8 @@ import RecipeTile from '../RecipeTile/RecipeTile';
 import './RecipeTable.css';
 
 const RecipeTable = ({ recipes }) => {
-  const tableItems = recipes.map((recipe, index) =>
-    <RecipeTile key={index} recipe={recipe} />);
+  const tableItems = recipes.map(recipe =>
+    <RecipeTile key={recipe.uri} recipe={recipe} />);
 
   return (
     <div className="recipe-table">

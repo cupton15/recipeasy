@@ -27,7 +27,6 @@ class RecipeSearch extends Component {
       .then(response => response.json())
       .then((response) => {
         const recipes = response.hits.map(hit => hit.recipe);
-        console.log(recipes);
         this.setState({
           loading: false,
           recipes,
