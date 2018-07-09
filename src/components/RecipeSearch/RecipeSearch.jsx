@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import RecipeTable from '../RecipeTable/RecipeTable';
+import OutsideAlerter from '../Core/OutsideAlerter';
 import './RecipeSearch.css';
 
 class RecipeSearch extends Component {
@@ -14,6 +15,7 @@ class RecipeSearch extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
   handleChange(event) {
@@ -34,14 +36,23 @@ class RecipeSearch extends Component {
       });
   }
 
+  handleOutsideClick() {
+    this.setState({
+      recipes: [],
+      searchText: '',
+    });
+  }
+
   render() {
     const recipesFound = this.state.recipes.length;
     const recipeTable = <RecipeTable recipes={this.state.recipes} />;
 
     return (
       <div className="recipe-search">
-        <SearchBar placeholder="search recipes..." onSubmit={this.handleSubmit} onChange={this.handleChange} loading={this.state.loading} />
-        { recipesFound ? recipeTable : '' }
+        <OutsideAlerter event={this.handleOutsideClick}>
+          <SearchBar placeholder="search recipes..." onSubmit={this.handleSubmit} onChange={this.handleChange} loading={this.state.loading} />
+          { recipesFound ? recipeTable : '' }
+        </OutsideAlerter>
       </div>
     );
   }
