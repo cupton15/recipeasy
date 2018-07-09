@@ -13,8 +13,8 @@ const RecipeDetails = (props) => {
 
   return (
     <article className="details-body">
-      <header className="details-header full-image-background" style={style}>
-        <div className="overlay">
+      <header className="details-header full-image-background rounded-corners" style={style}>
+        <div className="overlay rounded-corners">
           <div className="main-details">
             <h1>{ props.recipe.label }</h1>
             <a href={props.recipe.url} target="_blank" rel="noopener noreferrer">

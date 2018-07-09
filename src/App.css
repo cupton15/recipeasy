@@ -13,7 +13,10 @@
 
 .App-header {
   grid-area: header;
-  background: red;
+  display: flex;
+  padding: 1rem;
+  user-select: none;
+  color: white;
 }
 
 .App-footer {

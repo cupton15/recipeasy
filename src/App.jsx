@@ -12,7 +12,7 @@ const App = () => (
   <Router>
     <div className="App">
       <header className="App-header">
-        This is the header
+        <h1>Recipeasy</h1>
       </header>
       <div className="App-main">
         <Route exact path="/" component={RecipeSearch} />
