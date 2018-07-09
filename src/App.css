@@ -9,6 +9,8 @@
     "header header header"
     "main main main"
     "footer footer footer";
+  background-color: red;
+  background-image: -webkit-linear-gradient(30deg, red 50%, white 50%);
 }
 
 .App-header {
@@ -17,6 +19,10 @@
   padding: 1rem;
   user-select: none;
   color: white;
+}
+
+.App-title {
+  mix-blend-mode: difference;
 }
 
 .App-footer {
