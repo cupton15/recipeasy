@@ -21,10 +21,6 @@
   color: white;
 }
 
-.App-title {
-  mix-blend-mode: difference;
-}
-
 .App-footer {
   grid-area: footer;
   display: flex;

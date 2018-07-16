@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import './SearchBar.css';
 
-const SearchBar = ({
-  placeholder, onSubmit, onChange, loading,
-}) => {
+const SearchBar = (props) => {
   const handleChange = (event) => {
-    onChange(event);
+    props.onChange(event);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit();
+    props.onSubmit();
   };
 
-  const icon = loading ? (
+  const icon = props.loading ? (
     <FontAwesomeIcon icon="circle-notch" size="2x" spin />
   ) : (
     <FontAwesomeIcon icon="search" size="2x" />
@@ -23,7 +21,7 @@ const SearchBar = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder={placeholder} onChange={handleChange} />
+      <input type="text" value={props.value} placeholder={props.placeholder} onChange={handleChange} />
       <button className="search-button" type="submit">
         {icon}
       </button>
@@ -38,6 +36,7 @@ SearchBar.defaultProps = {
 
 SearchBar.propTypes = {
   placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   loading: PropTypes.bool,

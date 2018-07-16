@@ -50,7 +50,13 @@ class RecipeSearch extends Component {
     return (
       <div className="recipe-search">
         <OutsideAlerter event={this.handleOutsideClick}>
-          <SearchBar placeholder="search recipes..." onSubmit={this.handleSubmit} onChange={this.handleChange} loading={this.state.loading} />
+          <SearchBar
+            value={this.state.searchText}
+            placeholder="search recipes..."
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+            loading={this.state.loading}
+          />
           { recipesFound ? recipeTable : '' }
         </OutsideAlerter>
       </div>
