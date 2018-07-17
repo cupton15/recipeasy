@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import SearchBar from '../SearchBar/SearchBar';
 import RecipeTable from '../RecipeTable/RecipeTable';
 import OutsideAlerter from '../Core/OutsideAlerter';
@@ -11,6 +12,7 @@ class RecipeSearch extends Component {
       loading: false,
       searchText: '',
       recipes: [],
+      showTable: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,19 +34,19 @@ class RecipeSearch extends Component {
         this.setState({
           loading: false,
           recipes,
+          showTable: true,
         });
       });
   }
 
   handleOutsideClick() {
     this.setState({
-      recipes: [],
       searchText: '',
+      showTable: false,
     });
   }
 
   render() {
-    const recipesFound = this.state.recipes.length;
     const recipeTable = <RecipeTable recipes={this.state.recipes} />;
 
     return (
@@ -57,7 +59,9 @@ class RecipeSearch extends Component {
             onChange={this.handleChange}
             loading={this.state.loading}
           />
-          { recipesFound ? recipeTable : '' }
+          <CSSTransition in={this.state.showTable} classNames="shrink" timeout={500} unmountOnExit>
+            { recipeTable }
+          </CSSTransition>
         </OutsideAlerter>
       </div>
     );

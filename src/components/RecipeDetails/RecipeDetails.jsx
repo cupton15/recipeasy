@@ -43,7 +43,7 @@ RecipeDetails.propTypes = {
     image: PropTypes.string,
     source: PropTypes.string,
     yield: PropTypes.number,
-    calories: PropTypes.string,
+    calories: PropTypes.number,
     ingredients: PropTypes.array,
   }).isRequired,
 };

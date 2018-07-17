@@ -6,14 +6,4 @@
     justify-content: center;
     width: 100%;
     height: 400px;
-    animation: grow 0.5s;
-}
-
-@keyframes grow {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
 }
