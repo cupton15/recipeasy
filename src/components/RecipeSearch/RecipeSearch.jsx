@@ -59,7 +59,7 @@ class RecipeSearch extends Component {
             onChange={this.handleChange}
             loading={this.state.loading}
           />
-          <CSSTransition in={this.state.showTable} classNames="shrink" timeout={500} unmountOnExit>
+          <CSSTransition in={this.state.showTable} classNames="table" timeout={500} unmountOnExit>
             { recipeTable }
           </CSSTransition>
         </OutsideAlerter>

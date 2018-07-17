@@ -4,21 +4,21 @@
     align-items: center;
 }
 
-.shrink-enter {
+.table-enter {
     transform: scale(0)
 }
 
-.shrink-enter-active {
+.table-enter-active {
     transform: scale(1);
     transition: all 500ms ease-out;
 }
 
-.shrink-exit {
+.table-exit {
    opacity: 1;
    transform: scale(1.25);
 }
 
-.shrink-exit-active {
+.table-exit-active {
     opacity: 0;
     transform: scale(0.1);
     transition: all 500ms ease-out;
