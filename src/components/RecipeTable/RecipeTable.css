@@ -1,9 +1,40 @@
-.recipe-table {
+.container {
+    display: flex;
     margin-top: 2em;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recipe-table {
     display: grid;
-    grid: auto-flow 1fr / 1fr 1fr 1fr;
+    grid: auto-flow 1fr  / 1fr 1fr 1fr;
     grid-gap: 1rem 1rem;
     justify-content: center;
     width: 100%;
     height: 400px;
+    margin: 0 1em;
+}
+
+.close-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.button.previous {
+    color: white;
+}
+
+.button.next {
+    color: red;
 }

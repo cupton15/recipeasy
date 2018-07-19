@@ -27,7 +27,7 @@ class RecipeSearch extends Component {
   handleSubmit() {
     this.setState({ loading: true });
 
-    fetch(`https://api.edamam.com/search?q=${this.state.searchText}&app_id=ee2c97b8&app_key=44632bb36639b1e9d9c9a071b00fca22&to=9`)
+    fetch(`https://api.edamam.com/search?q=${this.state.searchText}&app_id=ee2c97b8&app_key=44632bb36639b1e9d9c9a071b00fca22&to=99`)
       .then(response => response.json())
       .then((response) => {
         const recipes = response.hits.map(hit => hit.recipe);
@@ -51,18 +51,18 @@ class RecipeSearch extends Component {
 
     return (
       <div className="recipe-search">
-        <OutsideAlerter event={this.handleOutsideClick}>
-          <SearchBar
-            value={this.state.searchText}
-            placeholder="search recipes..."
-            onSubmit={this.handleSubmit}
-            onChange={this.handleChange}
-            loading={this.state.loading}
-          />
-          <CSSTransition in={this.state.showTable} classNames="table" timeout={500} unmountOnExit>
-            { recipeTable }
-          </CSSTransition>
-        </OutsideAlerter>
+        {/* <OutsideAlerter event={this.handleOutsideClick}> */}
+        <SearchBar
+          value={this.state.searchText}
+          placeholder="search recipes..."
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          loading={this.state.loading}
+        />
+        <CSSTransition in={this.state.showTable} classNames="table" timeout={500} unmountOnExit>
+          { recipeTable }
+        </CSSTransition>
+        {/* </OutsideAlerter> */}
       </div>
     );
   }
