@@ -15,12 +15,6 @@
     margin: 0 1em;
 }
 
-.close-container {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-end;
-}
-
 .table-container {
     display: flex;
     flex-direction: column;

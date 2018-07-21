@@ -75,9 +75,6 @@ class RecipeTable extends Component {
       <div className="container">
         { this.state.selectedSection > 0 ? prevButton : '' }
         <div className="table-container">
-        <div className="close-container">
-          <span>close</span>
-        </div>
           <div className="recipe-table">
             { this.state.tableItems }
           </div>
