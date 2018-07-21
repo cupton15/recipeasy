@@ -25,7 +25,10 @@ class RecipeSearch extends Component {
   }
 
   handleSubmit() {
-    this.setState({ loading: true });
+    this.setState({
+      loading: true,
+      showTable: false,
+    });
 
     fetch(`https://api.edamam.com/search?q=${this.state.searchText}&app_id=ee2c97b8&app_key=44632bb36639b1e9d9c9a071b00fca22&to=99`)
       .then(response => response.json())
