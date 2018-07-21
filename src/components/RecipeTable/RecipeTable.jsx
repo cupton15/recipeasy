@@ -73,16 +73,16 @@ class RecipeTable extends Component {
 
     return (
       <div className="container">
+        { this.state.selectedSection > 0 ? prevButton : '' }
+        <div className="table-container">
         <div className="close-container">
           <span>close</span>
         </div>
-        <div className="table-container">
-          { this.state.selectedSection > 0 ? prevButton : '' }
           <div className="recipe-table">
             { this.state.tableItems }
           </div>
-          { this.state.selectedSection < this.state.chunkedItems.length - 1 ? nextButton : ''}
         </div>
+        { this.state.selectedSection < this.state.chunkedItems.length - 1 ? nextButton : ''}
       </div>
     );
   }
