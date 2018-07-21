@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './RecipeTile.css';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
+import OutsideAlerter from '../Core/OutsideAlerter';
 
 class RecipeTile extends Component {
   constructor(props) {
@@ -27,8 +28,10 @@ class RecipeTile extends Component {
 
     const recipeDetails = (this.state.clicked
       ? (
-        <div className="full-screen" onClick={() => this.onClick()}>
-          <RecipeDetails recipe={this.props.recipe} />
+        <div className="full-screen">
+          <OutsideAlerter event={() => this.onClick()}>
+            <RecipeDetails recipe={this.props.recipe} />
+          </OutsideAlerter>
         </div>
       )
       : null);
