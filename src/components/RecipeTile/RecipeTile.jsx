@@ -9,15 +9,15 @@ class RecipeTile extends Component {
     super(props);
 
     this.state = {
-      clicked: false,
+      opened: false,
     };
 
-    this.onClick = this.onClick.bind(this);
+    this.toggleOpened = this.toggleOpened.bind(this);
   }
 
-  onClick() {
+  toggleOpened() {
     this.setState(prevState => ({
-      clicked: !prevState.clicked,
+      opened: !prevState.opened,
     }));
   }
 
@@ -26,11 +26,11 @@ class RecipeTile extends Component {
       backgroundImage: `url(${this.props.recipe.image})`,
     };
 
-    const recipeDetails = (this.state.clicked
+    const recipeDetails = (this.state.opened
       ? (
         <div className="full-screen">
-          <OutsideAlerter event={() => this.onClick()}>
-            <RecipeDetails recipe={this.props.recipe} />
+          <OutsideAlerter event={() => this.toggleOpened()}>
+            <RecipeDetails recipe={this.props.recipe} onClose={this.toggleOpened} />
           </OutsideAlerter>
         </div>
       )
@@ -38,7 +38,7 @@ class RecipeTile extends Component {
 
     return (
       <div>
-        <button className="recipe-tile grow shadow full-image-background" style={style} onClick={() => this.onClick()}>
+        <button className="recipe-tile grow shadow full-image-background" style={style} onClick={() => this.toggleOpened()}>
           <div className="text-container"><div className="tile-text">{ this.props.recipe.label }</div></div>
           <div className="text-container"><div className="tile-text">{ this.props.recipe.source }</div></div>
         </button>
