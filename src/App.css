@@ -15,17 +15,9 @@
 
 .App-header {
   grid-area: header;
-  display: flex;
   padding: 1rem;
   user-select: none;
   color: white;
-}
-
-.App-footer {
-  grid-area: footer;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 50px;
 }
 
 .App-main {
