@@ -29,6 +29,13 @@
   justify-content: center
 }
 
+.App-footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 50px;
+}
+
 
 
 

@@ -7,7 +7,9 @@ import './NavBar.css';
 const NavBar = () => {
   return (
     <div className="nav-bar">
-      <h1 className="App-title">Recipeasy</h1>
+      <Link to="/">
+        <h1 className="app-title">Recipeasy</h1>
+      </Link>
       <div className="nav-items">
         <Link to="/login">
           <span>Login</span>
