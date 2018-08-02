@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar/NavBar';
 import RecipeSearch from './components/RecipeSearch/RecipeSearch';
+import Login from './components/Login/Login';
 import './App.css';
 
 fontawesome.library.add(faSearch, faCircleNotch);
@@ -18,6 +19,7 @@ const App = () => (
       </header>
       <div className="App-main">
         <Route exact path="/" component={RecipeSearch} />
+        <Route path="/login" component={Login} />
       </div>
       <footer className="App-footer">
         <Footer />
