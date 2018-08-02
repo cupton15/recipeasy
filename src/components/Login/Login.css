@@ -1,5 +1,5 @@
 .login-container {
-  min-height: 60%;
+  min-height: 40%;
   min-width: 25%;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -10,7 +10,7 @@
 
 h1 {
   text-align: left;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .login-form {

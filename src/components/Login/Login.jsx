@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Input from '../Core/Input/Input';
 import './Login.css';
 
 const Login = () => {
@@ -7,8 +8,8 @@ const Login = () => {
     <div className="login-container shadow-right">
       <h1>Login</h1>
       <form className="login-form">
-        <input type="email" />
-        <input type="password" />
+        <Input label="email" type="email" />
+        <Input label="password" type="password" />
         <button type="submit">Log in</button>
       </form>
     </div>
