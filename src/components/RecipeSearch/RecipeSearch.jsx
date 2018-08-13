@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../Core/SearchBar/SearchBar';
 import RecipeTable from '../RecipeTable/RecipeTable';
 import './RecipeSearch.css';
 

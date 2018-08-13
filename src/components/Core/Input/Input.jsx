@@ -17,7 +17,7 @@ const Input = (props) => {
 
   return (
     <div className="input-area">
-      <label>{props.label}</label>
+      <label htmlFor={props.name} >{props.label}</label>
       {input}
     </div>
   );
@@ -31,6 +31,7 @@ Input.defaultProps = {
 Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
 
 export default Input;

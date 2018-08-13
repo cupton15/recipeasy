@@ -8,7 +8,8 @@ class PasswordInput extends Component {
     super(props);
 
     this.state = {
-      type: 'password'
+      type: 'password',
+      value: '',
     };
 
     this.showHide = this.showHide.bind(this);
@@ -23,6 +24,15 @@ class PasswordInput extends Component {
     });
   }
 
+  updateValue(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this.setState({
+      value: event.target.value,
+    });
+  }
+
   render() {
     const attr = Object.assign({}, this.props, { type: this.state.type });
     const showHideIcon = this.state.type === 'password'
@@ -31,9 +41,9 @@ class PasswordInput extends Component {
 
     return (
       <div className="password">
-        <input {...attr} />
+        <input {...attr} value={this.state.value} onChange={event => this.updateValue(event)} />
         <button className="show-hide-icon" onClick={this.showHide}>
-          {showHideIcon}
+          { this.state.value !== '' ? showHideIcon : '' }
         </button>
       </div>
     );
