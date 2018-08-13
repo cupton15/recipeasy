@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Button.css';
+
 const Button = (props) => {
   let button = null;
 
@@ -12,11 +14,16 @@ const Button = (props) => {
       button = <button>{props.text}</button>;
   }
 
-  return ({ button });
+  return (<div className="custom-button"> {button} </div>);
 };
 
 export default Button;
 
+Button.defaultProps = {
+  type: '',
+};
+
 Button.propTypes = {
   text: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };

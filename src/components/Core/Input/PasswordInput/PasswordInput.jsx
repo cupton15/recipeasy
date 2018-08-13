@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import zxcvbn from 'zxcvbn';
 
 import './PasswordInput.css';
 
@@ -10,6 +12,7 @@ class PasswordInput extends Component {
     this.state = {
       type: 'password',
       value: '',
+      passwordStrength: 'weak',
     };
 
     this.showHide = this.showHide.bind(this);
@@ -28,8 +31,20 @@ class PasswordInput extends Component {
     event.preventDefault();
     event.stopPropagation();
 
+    const passwordResult = zxcvbn(event.target.value);
+    let passwordStrength = '';
+
+    if (passwordResult.score > 3) {
+      passwordStrength = 'strong';
+    } else if (passwordResult.score > 1) {
+      passwordStrength = 'medium';
+    } else {
+      passwordStrength = 'weak';
+    }
+
     this.setState({
       value: event.target.value,
+      passwordStrength,
     });
   }
 
@@ -39,15 +54,31 @@ class PasswordInput extends Component {
       ? <FontAwesomeIcon icon="eye" size="2x" />
       : <FontAwesomeIcon icon="eye-slash" size="2x" />;
 
+    const passwordStrength = this.state.value !== '' ? <div className={`password-strength ${this.state.passwordStrength}`} >{this.state.passwordStrength}</div> : '';
+
     return (
-      <div className="password">
-        <input {...attr} value={this.state.value} onChange={event => this.updateValue(event)} />
-        <button className="show-hide-icon" onClick={this.showHide}>
-          { this.state.value !== '' ? showHideIcon : '' }
-        </button>
+      <div>
+        <div className="password">
+          <input {...attr} className="password-input" value={this.state.value} onChange={event => this.updateValue(event)} />
+          { this.state.value !== '' ?
+            <button className="show-hide-icon" onClick={this.showHide}>
+              { this.state.value !== '' ? showHideIcon : null }
+            </button>
+          : ''
+          }
+        </div>
+        {this.props.showstrength ? passwordStrength : ''}
       </div>
     );
   }
 }
+
+PasswordInput.defaultProps = {
+  showstrength: 0,
+};
+
+PasswordInput.propTypes = {
+  showstrength: PropTypes.number,
+};
 
 export default PasswordInput;
