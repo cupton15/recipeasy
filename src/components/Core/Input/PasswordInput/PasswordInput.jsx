@@ -30,7 +30,7 @@ class PasswordInput extends Component {
   updateValue(event) {
     event.preventDefault();
     event.stopPropagation();
-
+    
     const passwordResult = zxcvbn(event.target.value);
     let passwordStrength = '';
 
