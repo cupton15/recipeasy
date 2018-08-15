@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import './NavBar.css';
 
@@ -11,9 +10,11 @@ const NavBar = () => {
         <h1 className="app-title">Recipeasy</h1>
       </Link>
       <div className="nav-items">
+        <Link to="/register">
+          <span>register</span>
+        </Link>
         <Link to="/login">
-          <span>Login</span>
-          <FontAwesomeIcon icon="user" size="2x" />
+          <span>login</span>
         </Link>
       </div>
     </div>

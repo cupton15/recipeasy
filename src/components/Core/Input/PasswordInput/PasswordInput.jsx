@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import zxcvbn from 'zxcvbn';
@@ -54,7 +55,11 @@ class PasswordInput extends Component {
       ? <FontAwesomeIcon icon="eye" size="2x" />
       : <FontAwesomeIcon icon="eye-slash" size="2x" />;
 
-    const passwordStrength = this.state.value !== '' ? <div className={`password-strength ${this.state.passwordStrength}`} >{this.state.passwordStrength}</div> : '';
+    const passwordStrength = (
+      <CSSTransition in={this.state.value !== ''} classNames="password-transition" timeout={300} mountOnEnter unmountOnExit>
+        <div className={`password-strength ${this.state.passwordStrength}`} >{this.state.passwordStrength}</div>
+      </CSSTransition>
+    );
 
     return (
       <div>

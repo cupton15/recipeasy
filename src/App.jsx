@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar/NavBar';
 import RecipeSearch from './components/RecipeSearch/RecipeSearch';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 import './App.css';
 
 fontawesome.library.add(faSearch, faCircleNotch);
@@ -20,6 +21,7 @@ const App = () => (
       <div className="App-main">
         <Route exact path="/" component={RecipeSearch} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </div>
       <footer className="App-footer">
         <Footer />

@@ -1,10 +1,10 @@
-.login-container {
+.form-container {
   min-height: 40%;
-  min-width: 25%;
+  min-width: 35%;
   display: grid;
   grid-template-rows: auto 1fr;
   background: white;
-  padding: 10px;
+  padding: 20px 20px 40px 20px;
   color: red;
 }
 
@@ -13,7 +13,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-.login-form {
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
