@@ -4,9 +4,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import zxcvbn from 'zxcvbn';
 import PasswordInput from './PasswordInput';
 
-jest.mock('zxcvbn', () => () => ({
-  score: 0,
-}));
+jest.mock('zxcvbn', () => () => (jest.fn()));
 
 describe('<PasswordInput />', () => {
   let wrapper;
