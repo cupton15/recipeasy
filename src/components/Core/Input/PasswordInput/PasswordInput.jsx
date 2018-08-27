@@ -43,6 +43,10 @@ class PasswordInput extends Component {
       passwordStrength = 'weak';
     }
 
+    if (this.props.onChange) {
+      this.props.onChange(event);
+    }
+
     this.setState({
       value: event.target.value,
       passwordStrength,

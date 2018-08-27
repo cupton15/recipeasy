@@ -32,6 +32,12 @@ Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
+  onChange: PropTypes.func.isRequired,
+
 };
 
 export default Input;
