@@ -68,7 +68,7 @@ class PasswordInput extends Component {
     return (
       <div>
         <div className="password">
-          <input {...attr} className="password-input" value={this.state.value} onChange={event => this.updateValue(event)} />
+          <input {...attr} className="password-input" value={this.state.value} onChange={event => this.updateValue(event)} autoComplete="off" />
           { this.state.value !== '' ?
             <button className="show-hide-icon" onClick={this.showHide}>
               { this.state.value !== '' ? showHideIcon : null }
@@ -88,6 +88,7 @@ PasswordInput.defaultProps = {
 
 PasswordInput.propTypes = {
   showstrength: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default PasswordInput;

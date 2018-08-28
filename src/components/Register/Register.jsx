@@ -11,7 +11,6 @@ class Register extends Component {
       email: '',
       displayName: '',
       password: '',
-      passwordConfirm: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,19 +40,27 @@ class Register extends Component {
 
   render() {
     const {
-      email, displayName, password, passwordConfirm,
+      email, displayName, password,
     } = this.state;
     const enabled = email.length > 0
                     && displayName.length > 0
-                    && password.length > 0
-                    && passwordConfirm.length > 0;
+                    && password.length > 0;
 
     return (
       <Form title="Register" onSubmit={this.handleSubmit}>
-        <Input label="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
+        <Input label="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} autoFocus required />
         <Input label="display name" name="displayName" type="input" value={this.state.displayName} onChange={this.handleChange} required />
-        <Input label="password" name="password" type="password" showstrength={1} value={this.state.password} onChange={this.handleChange} required />
-        <Input label="confirm password" name="passwordConfirm" type="password" value={this.state.passwordConfirm} onChange={this.handleChange} required />
+        <Input
+          label="password"
+          name="password"
+          type="password"
+          showstrength={1}
+          value={this.state.password}
+          onChange={this.handleChange}
+          pattern="[A-z]{1,15}"       
+          minLength="7"
+          required
+        />
         <Button type="submit" text="Register" disabled={!enabled} />
       </Form>
     );
