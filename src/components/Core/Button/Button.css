@@ -8,3 +8,8 @@
   font-size: 1.4rem;
   cursor: pointer;
 }
+
+.custom-button > button:disabled {
+  opacity: 0.65; 
+  cursor: not-allowed;
+}
