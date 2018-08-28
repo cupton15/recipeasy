@@ -4,6 +4,8 @@ import Form from '../Core/Form/Form';
 import Input from '../Core/Input/Input';
 import Button from '../Core/Button/Button';
 
+import './Register.css';
+
 class Register extends Component {
   constructor() {
     super();
@@ -57,10 +59,16 @@ class Register extends Component {
           showstrength={1}
           value={this.state.password}
           onChange={this.handleChange}
-          pattern="[A-z]{1,15}"       
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$"
           minLength="7"
           required
         />
+        <ul className="password-criteria-list">
+          <li className={`password-criteria ${password.length > 6 ? 'active' : ''}`}>password is at least 7 characters long</li>
+          <li className={`password-criteria ${/[0-9]/g.test(password) ? 'active' : ''}`}>password contains at least one number</li>
+          <li className={`password-criteria ${/[A-Z]/g.test(password) ? 'active' : ''}`}>password contains at least one capital</li>
+          <li className={`password-criteria ${/[a-z]/g.test(password) ? 'active' : ''}`}>password contains at least one lower case letter</li>
+        </ul>
         <Button type="submit" text="Register" disabled={!enabled} />
       </Form>
     );
