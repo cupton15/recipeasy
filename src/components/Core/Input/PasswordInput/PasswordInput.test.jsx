@@ -10,7 +10,7 @@ describe('<PasswordInput />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<PasswordInput />);
+    wrapper = shallow(<PasswordInput onChange={() => {}} />);
   });
 
   const enterText = (input) => {

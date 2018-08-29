@@ -44,9 +44,16 @@ class Register extends Component {
     const {
       email, displayName, password,
     } = this.state;
+    const containsNumber = /[0-9]/g.test(password);
+    const containsCapital = /[A-Z]/g.test(password);
+    const containsLowercase = /[a-z]/g.test(password);
+
     const enabled = email.length > 0
                     && displayName.length > 0
-                    && password.length > 0;
+                    && password.length > 6
+                    && containsNumber
+                    && containsCapital
+                    && containsLowercase;
 
     return (
       <Form title="Register" onSubmit={this.handleSubmit}>
@@ -65,9 +72,9 @@ class Register extends Component {
         />
         <ul className="password-criteria-list">
           <li className={`password-criteria ${password.length > 6 ? 'active' : ''}`}>password is at least 7 characters long</li>
-          <li className={`password-criteria ${/[0-9]/g.test(password) ? 'active' : ''}`}>password contains at least one number</li>
-          <li className={`password-criteria ${/[A-Z]/g.test(password) ? 'active' : ''}`}>password contains at least one capital</li>
-          <li className={`password-criteria ${/[a-z]/g.test(password) ? 'active' : ''}`}>password contains at least one lower case letter</li>
+          <li className={`password-criteria ${containsNumber ? 'active' : ''}`}>password contains at least one number</li>
+          <li className={`password-criteria ${containsCapital ? 'active' : ''}`}>password contains at least one capital</li>
+          <li className={`password-criteria ${containsLowercase ? 'active' : ''}`}>password contains at least one lower case letter</li>
         </ul>
         <Button type="submit" text="Register" disabled={!enabled} />
       </Form>
