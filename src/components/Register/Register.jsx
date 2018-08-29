@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Form from '../Core/Form/Form';
 import Input from '../Core/Input/Input';
@@ -13,6 +14,7 @@ class Register extends Component {
       email: '',
       displayName: '',
       password: '',
+      registered: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -36,13 +38,21 @@ class Register extends Component {
       body: JSON.stringify(data),
     })
       .then(response => response.json())
-      .then(response => console.log('Success:', JSON.stringify(response)))
+      .then((response) => {
+        if (response.errors) {
+
+        } else {
+          this.setState({
+            registered: true,
+          });
+        }
+      })
       .catch(error => console.error('Error:', error));
   }
 
   render() {
     const {
-      email, displayName, password,
+      email, displayName, password, registered
     } = this.state;
     const containsNumber = /[0-9]/g.test(password);
     const containsCapital = /[A-Z]/g.test(password);
@@ -54,6 +64,10 @@ class Register extends Component {
                     && containsNumber
                     && containsCapital
                     && containsLowercase;
+
+    if (registered) {
+      return <Redirect to={{ pathname: '/login' }} />;
+    }
 
     return (
       <Form title="Register" onSubmit={this.handleSubmit}>
