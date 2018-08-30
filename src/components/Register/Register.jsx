@@ -15,6 +15,7 @@ class Register extends Component {
       displayName: '',
       password: '',
       registered: false,
+      errors: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,7 +41,9 @@ class Register extends Component {
       .then(response => response.json())
       .then((response) => {
         if (response.errors) {
-
+          this.setState({
+            errors: response.errors,
+          });
         } else {
           this.setState({
             registered: true,
@@ -52,7 +55,7 @@ class Register extends Component {
 
   render() {
     const {
-      email, displayName, password, registered
+      email, displayName, password, registered,
     } = this.state;
     const containsNumber = /[0-9]/g.test(password);
     const containsCapital = /[A-Z]/g.test(password);
@@ -71,6 +74,11 @@ class Register extends Component {
 
     return (
       <Form title="Register" onSubmit={this.handleSubmit}>
+        {this.state.errors.length ? (
+          <div className="errors">
+            {this.state.errors.map((err, index) => <span key={index}>{err.errorMessage}</span>)}
+          </div>
+         ) : ''}
         <Input label="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} autoFocus required />
         <Input label="display name" name="displayName" type="input" value={this.state.displayName} onChange={this.handleChange} required />
         <Input
