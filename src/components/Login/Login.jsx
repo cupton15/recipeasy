@@ -35,7 +35,7 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then((response) => {
-          console.log(response);
+        this.props.location.login();
       })
       .catch(error => console.error('Error:', error));
   }
@@ -61,6 +61,6 @@ class Login extends Component {
       </Form>
     );
   }
-};
+}
 
 export default Login;

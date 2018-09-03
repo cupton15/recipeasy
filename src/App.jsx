@@ -9,15 +9,18 @@ import RecipeSearch from './components/RecipeSearch/RecipeSearch';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import './App.css';
+import { AuthProvider } from './contexts/AuthContext';
 
 fontawesome.library.add(faSearch, faCircleNotch);
 
 const App = () => (
   <Router>
     <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
+      <AuthProvider>
+        <header className="App-header">
+          <NavBar />
+        </header>
+      </AuthProvider>
       <div className="App-main">
         <Route exact path="/" component={RecipeSearch} />
         <Route path="/login" component={Login} />

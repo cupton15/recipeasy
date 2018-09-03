@@ -15,7 +15,7 @@ class Register extends Component {
       displayName: '',
       password: '',
       registered: false,
-      errors: []
+      errors: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
