@@ -5,16 +5,16 @@ const AuthContext = React.createContext();
 class AuthProvider extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isAuth: false,
+
+    this.login = () => {
+      this.setState({ isAuth: true });
     };
-
-    this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
-  }
 
-  login() {
-    this.setState({ isAuth: true });
+    this.state = {
+        isAuth: false,
+        login: this.login,
+    };
   }
 
   logout() {

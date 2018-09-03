@@ -21,7 +21,7 @@ const NavBar = () => {
                 <Link to="/register">
                   <span>register</span>
                 </Link>
-                <Link to={{ pathname: '/login', search: '', hash: '', state: { login } }}>
+                <Link to="/login">
                   <span>login</span>
                 </Link>
               </div>

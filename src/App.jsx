@@ -15,21 +15,21 @@ fontawesome.library.add(faSearch, faCircleNotch);
 
 const App = () => (
   <Router>
-    <div className="App">
-      <AuthProvider>
-        <header className="App-header">
-          <NavBar />
-        </header>
-      </AuthProvider>
-      <div className="App-main">
-        <Route exact path="/" component={RecipeSearch} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+    <AuthProvider>
+      <div className="App">
+          <header className="App-header">
+            <NavBar />
+          </header>
+        <div className="App-main">
+          <Route exact path="/" component={RecipeSearch} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+        </div>
+        <footer className="App-footer">
+          <Footer />
+        </footer>
       </div>
-      <footer className="App-footer">
-        <Footer />
-      </footer>
-    </div>
+    </AuthProvider>
   </Router>
 );
 
