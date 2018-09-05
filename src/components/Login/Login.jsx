@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Form from '../Core/Form/Form';
 import Input from '../Core/Input/Input';
@@ -11,6 +12,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      loggedIn: false,
+      errors: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,13 +40,28 @@ class Login extends Component {
       })
         .then(response => response.json())
         .then((response) => {
-          func();
+          if (response.errors) {
+            this.setState({
+              errors: response.errors,
+            });
+          } else {
+            func();
+            this.setState({
+              loggedIn: true
+            });
+          }
         })
         .catch(error => console.error('Error:', error));
     };
   }
 
   render() {
+    const { email, password, loggedIn, errors } = this.state;
+    
+    if (loggedIn) {
+      return <Redirect to={{ pathname: '/' }} />;
+    }
+
     return (
       <AuthConsumer>
         {({ isAuth, login, logout }) => (
@@ -52,14 +70,14 @@ class Login extends Component {
               label="email"
               name="email"
               type="email"
-              value={this.state.email}
+              value={email}
               onChange={this.handleChange}
             />
             <Input
               label="password"
               name="password"
               type="password"
-              value={this.state.password}
+              value={password}
               onChange={this.handleChange}
             />
             <Button type="submit" text="Log In" />

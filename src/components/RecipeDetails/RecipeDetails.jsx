@@ -19,19 +19,17 @@ const RecipeDetails = (props) => {
       <article className="details-body">
         <header className="details-header full-image-background rounded-corners" style={style}>
           <div className="overlay rounded-corners">
-            <button className="close-button" onClick={onClose}>
+            <button className="close-button grow" onClick={onClose}>
                 close <FontAwesomeIcon icon="times" size="2x" />
             </button>
             <div className="details-content">
-              <div className="main-details rounded-corners shadow">
+              <a href={props.recipe.url} className="main-details rounded-corners shadow" target="_blank" rel="noopener noreferrer">
                 <h1>{ props.recipe.label }</h1>
-                <a href={props.recipe.url} target="_blank" rel="noopener noreferrer">
-                  { props.recipe.source }
-                  <span className="visuallyhidden">, opens in a new window</span>
-                </a>
+                { props.recipe.source }
                 <div>Number of servings: {props.recipe.yield}</div>
-                <div>Calories: {props.recipe.calories}</div>
-              </div>
+                <div>Calories: {props.recipe.calories.toFixed(2)}</div>
+                <span className="visuallyhidden">, opens in a new window</span>
+              </a>
               <div className="ingredients rounded-corners shadow">
                 <div>Ingredients</div>
                 <ul>
