@@ -47,7 +47,7 @@ class Login extends Component {
           } else {
             func();
             this.setState({
-              loggedIn: true
+              loggedIn: true,
             });
           }
         })
@@ -56,8 +56,12 @@ class Login extends Component {
   }
 
   render() {
-    const { email, password, loggedIn, errors } = this.state;
-    
+    const {
+      email, password, loggedIn, errors 
+    } = this.state;
+
+    const enabled = email.length > 0 && password.length > 0;
+
     if (loggedIn) {
       return <Redirect to={{ pathname: '/' }} />;
     }
@@ -80,7 +84,7 @@ class Login extends Component {
               value={password}
               onChange={this.handleChange}
             />
-            <Button type="submit" text="Log In" />
+            <Button type="submit" text="Log In" disabled={!enabled} />
           </Form>
         )}
       </AuthConsumer>

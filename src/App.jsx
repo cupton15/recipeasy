@@ -17,9 +17,9 @@ const App = () => (
   <Router>
     <AuthProvider>
       <div className="App">
-          <header className="App-header">
-            <NavBar />
-          </header>
+        <header className="App-header">
+          <NavBar />
+        </header>
         <div className="App-main">
           <Route exact path="/" component={RecipeSearch} />
           <Route path="/login" component={Login} />
