@@ -45,7 +45,7 @@ class Login extends Component {
               errors: response.errors,
             });
           } else {
-            func();
+            func(response);
             this.setState({
               loggedIn: true,
             });

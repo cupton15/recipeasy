@@ -6,15 +6,21 @@ class AuthProvider extends Component {
   constructor(props) {
     super(props);
 
-    this.login = () => {
-      this.setState({ isAuth: true });
-    };
+    this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
 
+    const token = localStorage.getItem('token');
+
     this.state = {
-        isAuth: false,
+        isAuth: !!token,
         login: this.login,
+        token,
     };
+  }
+
+  login({ auth, token }) {
+    this.setState({ isAuth: auth });
+    localStorage.setItem('token', token);
   }
 
   logout() {
