@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom';
 
 import './NavBar.css';
 import { AuthConsumer } from '../../contexts/AuthContext';
+import UserDropDown from '../UserDropDown/UserDropDown';
 
 const NavBar = () => {
   return (
     <AuthConsumer>
-      {({ isAuth, login }) => (
+      {auth => (
         <div className="nav-bar">
           <Link to="/">
             <h1 className="app-title">Recipeasy</h1>
           </Link>
-          { isAuth ? (
+          { auth.isAuth ? (
             <div className="nav-items">
-              <span>logged in</span>
+              <UserDropDown logout={auth.logout} />
             </div>
             ) : (
               <div className="nav-items">

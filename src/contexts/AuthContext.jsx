@@ -14,17 +14,22 @@ class AuthProvider extends Component {
     this.state = {
         isAuth: !!token,
         login: this.login,
+        logout: this.logout,
         token,
     };
   }
 
-  login({ auth, token }) {
-    this.setState({ isAuth: auth });
+  login({ auth, token, displayName }) {
+    this.setState({ 
+      isAuth: auth,
+      displayName: displayName,
+    });
     localStorage.setItem('token', token);
   }
 
   logout() {
     this.setState({ isAuth: false });
+    localStorage.removeItem('token');
   }
 
   render() {
