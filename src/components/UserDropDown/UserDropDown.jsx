@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
+import './UserDropDown.css';
 
 class UserDropDown extends Component {
   constructor(props) {
@@ -12,14 +15,16 @@ class UserDropDown extends Component {
   componentDidMount() {
     const token = localStorage.getItem('token');
     const headers = { 'Content-type': 'application/json' };
-    headers['x-access-token'] = `Token ${token}`;
+    headers['x-access-token'] = token;
 
     fetch('http://localhost:3300/api/displayname', { headers })
       .then((res) => {
         if (!res.ok) {
-          this.props.logout();
-          return;
+          throw Error(res.status);
         }
+        return res.json();
+      })
+      .then((res) => {
         this.setState({
           displayName: res.displayName,
         });
@@ -31,7 +36,10 @@ class UserDropDown extends Component {
 
   render() {
     return (
-      <span>{this.state.displayName}</span>
+      <button className="drop-down-header grow">
+        <span>{this.state.displayName}</span>
+        <FontAwesomeIcon icon="user" size="2x" />
+      </button>
     );
   }
 }

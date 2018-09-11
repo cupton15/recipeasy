@@ -1,0 +1,8 @@
+.drop-down-header {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

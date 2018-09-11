@@ -3,7 +3,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 50px auto 50px;
+  grid-template-columns: auto auto 50px;
   grid-template-rows: 70px 1fr 70px;
   grid-template-areas: 
     "header header header"
