@@ -1,5 +1,4 @@
 .form-container {
-  min-height: 40%;
   min-width: 50%;
   display: grid;
   grid-template-rows: auto 1fr;

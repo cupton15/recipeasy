@@ -1,3 +1,18 @@
+.drop-down {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.drop-down.opened {
+    background: red;
+}
+
+.drop-down.opened span,
+.drop-down.opened svg {
+    color: white;
+}
+
 .drop-down-header {
     display: flex;
     justify-items: center;
@@ -5,4 +20,28 @@
     background: none;
     border: none;
     cursor: pointer;
+    padding: 5px 10px;
+}
+
+.menu {
+    display: flex;
+    padding: 20px 10px;
+    position: absolute;
+    top: 50px;
+    width: 10vw;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background: inherit;
+    min-height: 5%;
+}
+
+.menu-enter {
+    transform: scale(0, 0);
+    transform-origin: top right;
+    transition: all 300ms ease-in-out;
+}
+
+.menu-enter-active {
+    transform: scale(1, 1);
 }
