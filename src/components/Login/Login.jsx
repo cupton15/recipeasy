@@ -57,7 +57,7 @@ class Login extends Component {
 
   render() {
     const {
-      email, password, loggedIn, errors 
+      email, password, loggedIn, errors,
     } = this.state;
 
     const enabled = email.length > 0 && password.length > 0;
@@ -70,6 +70,11 @@ class Login extends Component {
       <AuthConsumer>
         {({ isAuth, login, logout }) => (
           <Form title="Login" onSubmit={this.handleSubmit(login)}>
+            {errors.length ? (
+              <div className="errors">
+                {this.state.errors.map((err, index) => <span key={index}>{err.errorMessage}</span>)}
+              </div>
+            ) : ''}
             <Input
               label="email"
               name="email"

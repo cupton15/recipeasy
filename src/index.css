@@ -64,3 +64,12 @@ a:hover {
 .rounded-corners {
   border-radius: 6px;
 }
+
+.errors {
+  padding: 5px;
+  background: pink;
+  text-align: left;
+  font-size: 0.9rem;
+  border: 1px red solid;
+  margin-bottom: 5px;
+}
