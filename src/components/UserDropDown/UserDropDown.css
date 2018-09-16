@@ -25,10 +25,10 @@
 
 .menu {
     display: flex;
-    padding: 20px 10px;
+    padding: 20px 0;
     position: absolute;
     top: 50px;
-    width: 10vw;
+    width: 144px;
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -44,4 +44,37 @@
 
 .menu-enter-active {
     transform: scale(1, 1);
+}
+
+.menu-item {
+    width: 100%;
+    z-index: 0;
+    position: relative;
+}
+
+.drop-down-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 0;
+}
+
+.drop-down-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;  left: 0;  right: 0;  bottom: 0;
+    background: rgba(220,0,0,0.5);
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform .3s ease-out;
+}
+
+.drop-down-button:hover::before {
+    transform: scaleX(1);
 }

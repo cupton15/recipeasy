@@ -80,8 +80,12 @@ class UserDropDown extends Component {
           <FontAwesomeIcon icon="user" size="2x" />
         </button>
         <CSSTransition in={this.state.opened} classNames="menu" timeout={{ enter: 300, exit: 0 }} unmountOnExit>
-          <div className="menu" ref={(element) => { this.dropdownMenu = element; }}>
-            <button onClick={this.logout}>logout</button>
+          <div className="menu shadow" ref={(element) => { this.dropdownMenu = element; }}>
+            <div className="menu-item">
+              <button className="drop-down-button" onClick={this.logout}>
+                logout<FontAwesomeIcon icon="sign-out-alt" size="lg" />
+              </button>
+            </div>
           </div>
         </CSSTransition>
       </div>
