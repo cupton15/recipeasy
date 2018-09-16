@@ -73,9 +73,14 @@ class UserDropDown extends Component {
       opened: this.state.opened,
     });
 
+    const dropDownHeaderClass = classNames({
+      'drop-down-header': true,
+      grow: !this.state.opened,
+    });
+
     return (
       <div className={dropDownClass}>
-        <button className="drop-down-header grow" onClick={this.openMenu}>
+        <button className={dropDownHeaderClass} onClick={this.openMenu}>
           <span>{this.state.displayName}</span>
           <FontAwesomeIcon icon="user" size="2x" />
         </button>
