@@ -2,6 +2,7 @@
   "name": "recipeasy",
   "version": "0.1.0",
   "private": true,
+  "homepage": "htts://carlupton.co.uk/recipeasy",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
