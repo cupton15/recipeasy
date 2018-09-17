@@ -14,7 +14,7 @@ import { AuthProvider } from './contexts/AuthContext';
 fontawesome.library.add(faSearch, faCircleNotch);
 
 const App = () => (
-  <Router>
+  <Router basename="/recipeasy">
     <AuthProvider>
       <div className="App">
         <header className="App-header">
