@@ -24,7 +24,7 @@ class UserDropDown extends Component {
     const headers = { 'Content-type': 'application/json' };
     headers['x-access-token'] = token;
 
-    fetch('http://localhost:3300/api/displayname', { headers })
+    fetch('/api/displayname', { headers })
       .then((res) => {
         if (!res.ok) {
           throw Error(res.status);

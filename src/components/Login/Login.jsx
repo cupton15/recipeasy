@@ -31,7 +31,7 @@ class Login extends Component {
       event.preventDefault();
 
       const data = this.state;
-      fetch('http://localhost:3300/api/login', {
+      fetch('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
