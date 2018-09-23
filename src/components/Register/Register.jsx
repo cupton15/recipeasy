@@ -31,7 +31,7 @@ class Register extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = this.state;
-    fetch('/api/register', {
+    fetch('/recipeasy/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ class Login extends Component {
       event.preventDefault();
 
       const data = this.state;
-      fetch('/api/login', {
+      fetch('/recipeasy/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
