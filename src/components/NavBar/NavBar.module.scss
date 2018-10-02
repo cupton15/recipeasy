@@ -4,6 +4,12 @@ a {
 
 .appTitle {
   margin: 0;
+  mix-blend-mode: difference;
+  color: cyan;
+
+  &:hover {
+    mix-blend-mode: difference;
+  }
 }
 
 .navBar {
