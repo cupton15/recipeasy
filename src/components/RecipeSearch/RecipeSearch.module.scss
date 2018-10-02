@@ -14,7 +14,7 @@
     transform: scale(0)
 }
 
-.enter.enterActive {
+.enterActive {
     transform: scale(1);
     transition: all 500ms ease-out;
 }
@@ -24,7 +24,7 @@
    transform: scale(1.25);
 }
 
-.exit.exitActive {
+.exitActive {
     opacity: 0;
     transform: scale(0.1);
     transition: all 500ms ease-out;
