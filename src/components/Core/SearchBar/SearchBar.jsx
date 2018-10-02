@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import './SearchBar.css';
+import styles from './SearchBar.module.scss';
 
 const SearchBar = (props) => {
   const handleChange = (event) => {
@@ -22,7 +22,7 @@ const SearchBar = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" value={props.value} placeholder={props.placeholder} onChange={handleChange} />
-      <button className="search-button" type="submit">
+      <button className={styles.searchButton} type="submit">
         {icon}
       </button>
     </form>
