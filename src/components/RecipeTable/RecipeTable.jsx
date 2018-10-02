@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 import RecipeTile from '../RecipeTile/RecipeTile';
-import './RecipeTable.css';
+import styles from './RecipeTable.module.scss';
 
 class RecipeTable extends Component {
   constructor(props) {
@@ -61,22 +61,22 @@ class RecipeTable extends Component {
 
   render() {
     const prevButton = (
-      <button className="grow button previous" onClick={() => this.prevChunk()}>
+      <button className={`grow ${styles.button} ${styles.previous}`} onClick={() => this.prevChunk()}>
         <FontAwesomeIcon icon="caret-left" size="8x" />
       </button>
     );
 
     const nextButton = (
-      <button className="grow button next" onClick={() => this.nextChunk()}>
+      <button className={`grow ${styles.button} ${styles.next}`} onClick={() => this.nextChunk()}>
         <FontAwesomeIcon icon="caret-right" size="8x" />
       </button>
     );
 
     return (
-      <div className="container">
+      <div className={styles.container}>
         { this.state.selectedSection > 0 ? prevButton : '' }
-        <div className="table-container">
-          <div className="recipe-table">
+        <div className={styles.tableContainer}>
+          <div className={styles.recipeTable}>
             { this.state.tableItems }
           </div>
         </div>
