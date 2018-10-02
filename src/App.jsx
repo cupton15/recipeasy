@@ -8,7 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import RecipeSearch from './components/RecipeSearch/RecipeSearch';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import './App.css';
+import './App.scss';
 import { AuthProvider } from './contexts/AuthContext';
 
 fontawesome.library.add(faSearch, faCircleNotch);
