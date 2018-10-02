@@ -1,0 +1,37 @@
+a {
+  text-decoration: none;
+}
+
+.appTitle {
+  margin: 0;
+}
+
+.navBar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navItems {
+  padding-right: 20px;
+  display: flex;
+
+  a {
+    display: block;
+    margin: 0 10px;
+    height: fit-content;
+  }
+
+  svg {
+    color: red;
+    margin-left: 10px;
+  }
+
+  span {
+    color: red;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}

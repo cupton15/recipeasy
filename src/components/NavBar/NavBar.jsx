@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './NavBar.css';
+import styles from './NavBar.module.scss';
 import { AuthConsumer } from '../../contexts/AuthContext';
 import UserDropDown from '../UserDropDown/UserDropDown';
 
@@ -9,16 +9,16 @@ const NavBar = () => {
   return (
     <AuthConsumer>
       {auth => (
-        <div className="nav-bar">
+        <div className={styles.navBar}>
           <Link to="/">
-            <h1 className="app-title">Recipeasy</h1>
+            <h1 className={styles.appTitle}>Recipeasy</h1>
           </Link>
           { auth.isAuth ? (
-            <div className="nav-items">
+            <div className={styles.navItems}>
               <UserDropDown logout={auth.logout} />
             </div>
             ) : (
-              <div className="nav-items">
+              <div className={styles.navItems}>
                 <Link to="/register">
                   <span>register</span>
                 </Link>
