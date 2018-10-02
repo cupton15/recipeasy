@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import SearchBar from '../Core/SearchBar/SearchBar';
 import RecipeTable from '../RecipeTable/RecipeTable';
-import './RecipeSearch.css';
+import styles from './RecipeSearch.module.scss';
 
 class RecipeSearch extends Component {
   constructor() {
@@ -44,7 +44,7 @@ class RecipeSearch extends Component {
     const recipeTable = <RecipeTable recipes={this.state.recipes} />;
 
     return (
-      <div className="recipe-search">
+      <div className={styles.recipeSearch}>
         <SearchBar
           value={this.state.searchText}
           placeholder="search recipes..."
@@ -52,7 +52,7 @@ class RecipeSearch extends Component {
           onChange={this.handleChange}
           loading={this.state.loading}
         />
-        <CSSTransition in={this.state.showTable} classNames="table" timeout={500} unmountOnExit>
+        <CSSTransition in={this.state.showTable} classNames={styles} timeout={500} unmountOnExit>
           { recipeTable }
         </CSSTransition>
       </div>
