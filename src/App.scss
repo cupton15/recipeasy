@@ -1,16 +1,22 @@
+@import './mixins/breakpoints.scss';
+
 .App {
   text-align: center;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 50px auto 50px;
-  grid-template-rows: 70px 1fr 70px;
+  grid-template-rows: 15% 1fr 15%;
   grid-template-areas: 
     "header header header"
     "main main main"
     "footer footer footer";
   background-color: red;
   background-image: -webkit-linear-gradient(30deg, red 50%, white 50%);
+
+  @include breakpoint(desktop) {
+    grid-template-rows: 70px 1fr 70px;
+  }
 }
 
 .App-header {
@@ -23,10 +29,14 @@
 .App-main {
   grid-area: main;
   padding: 0 10%;
-  overflow: hidden;
+  overflow-y: scroll;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+
+  @include breakpoint(desktop) {
+    overflow: hidden;
+  }
 }
 
 .App-footer {
