@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Form.module.scss';
 
-import './Form.css';
 
 const Form = (props) => {
   return (
-    <div className="form-container shadow-right">
+    <div className={`${styles.formContainer} shadow-right`}>
       <h1>{props.title}</h1>
-      <form className="form" onSubmit={props.onSubmit}>
+      <form className={styles.form} onSubmit={props.onSubmit}>
         { props.children }
       </form>
     </div>

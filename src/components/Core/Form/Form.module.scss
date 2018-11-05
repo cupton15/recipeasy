@@ -1,10 +1,16 @@
-.form-container {
-  min-width: 50%;
+@import '../../../mixins/breakpoints.scss';
+
+.formContainer {
+  width: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
   background: white;
   padding: 20px 20px 40px 20px;
   color: red;
+
+  @include breakpoint(tablet) {
+    min-width: 50%;
+  }
 }
 
 h1 {

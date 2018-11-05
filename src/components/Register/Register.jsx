@@ -79,7 +79,7 @@ class Register extends Component {
             {this.state.errors.map((err, index) => <span key={index}>{err.errorMessage}</span>)}
           </div>
          ) : ''}
-        <Input label="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} autoFocus required />
+        <Input label="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} required />
         <Input label="display name" name="displayName" type="input" value={this.state.displayName} onChange={this.handleChange} required />
         <Input
           label="password"

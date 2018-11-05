@@ -5,8 +5,9 @@
   height: 100%;
   width: 100%;
   display: grid;
+  overflow-y: scroll;
   grid-template-columns: 50px auto 50px;
-  grid-template-rows: 15% 1fr 15%;
+  grid-template-rows: 10% 1fr 10%;
   grid-template-areas: 
     "header header header"
     "main main main"
@@ -29,8 +30,8 @@
 .App-main {
   grid-area: main;
   padding: 0 10%;
-  overflow-y: scroll;
   display: flex;
+  overflow: scroll;
   align-items: center;
   justify-content: center;
 
